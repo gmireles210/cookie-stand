@@ -1,9 +1,13 @@
 'use strict';
 
-'use strict';
+// lab 6
+// Global Variables
+var hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'];
 
-var frankie = {
-  name: 'frankie',
+var locations = ['Seattle', 'Tokyo', 'Dubai', 'Paris', 'Lima'];
+
+var customers = {
+  name: 'customers',
   age: 0,
   interests: ['cuddling', 'chasing string', 'catnip'],
   isGoodWithKids: true,
