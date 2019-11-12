@@ -1,76 +1,204 @@
 'use strict';
+var hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
+//max hourly customers
+//average cookies per customer
+//method generating a random number and customers 
+//array with results
+//display value of array in <ul>
+// calculate the sum of these hourly totals
 
-// lab 6
-// Global Variables
-var hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'];
-
-var locations = ['Seattle', 'Tokyo', 'Dubai', 'Paris', 'Lima'];
-
-var customers = {
-  name: 'customers',
-  age: 0,
-  interests: ['cuddling', 'chasing string', 'catnip'],
-  isGoodWithKids: true,
-  isGoodWithDogs: false,
-  isGoodWithOtherCats: true,
-  getAge: function () {
-    console.log(this.name);
-    this.age = randomAge(3, 12) + ' months';
-    console.log(this.age);
+function randomCustomer(shop) {
+  for (var i = 0; i < hours.length; i++) {
+    var customerCount = Math.floor(Math.random() * (shop.maxCustomers - shop.minCustomers + 1)) + shop.minCustomers;
+    var cookieSales = Math.ceil(shop.averageCookieCustomer * customerCount);
+    shop.hourlyResultsArray.push(cookieSales);
+    shop.totalSales += cookieSales;
   }
-};
-frankie.getAge();
-
-
-console.log(frankie);
-
-function randomAge (min, max) {
-  return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
-// we need to:
-// get (from the DOM) who the parent element is going to be. where am I attaching this new element
-var parentElement = document.getElementById('kittenProfiles');
+var seattle = {
+  name: 'Seattle',
+  minCustomers: 23,
+  maxCustomers: 65,
+  averageCookieCustomer: 6.3,
+  hourlyResultsArray: [],
+  totalSales: 0,
+  generateHourlySales: function () {
+    randomCustomer(this);
+  },
+};
+seattle.generateHourlySales();
+console.log('output', seattle.hourlyResultsArray);
+console.log('Seattle total', seattle.totalSales);
 
-// create a new element, or elements, that represent frankie
-// article
-// inside that article, h2 for the name, paragraph with their age, ul and some lis with their interests, image
+
+
+var tokyo = {
+  name: 'Tokyo',
+  minCustomers: 3,
+  maxCustomers: 24,
+  averageCookieCustomer: 1.2,
+  hourlyResultsArray: [],
+  totalSales: 0,
+  generateHourlySales: function () {
+    randomCustomer(this);
+  },
+};
+tokyo.generateHourlySales();
+console.log('output', tokyo.hourlyResultsArray);
+console.log('Tokyo total', tokyo.totalSales);
+
+var dubai = {
+  name: 'Dubai',
+  minCustomers: 11,
+  maxCustomers: 38,
+  averageCookieCustomer: 3.7,
+  hourlyResultsArray: [],
+  totalSales: 0,
+  generateHourlySales: function () {
+    randomCustomer(this);
+  },
+};
+dubai.generateHourlySales();
+console.log('output', dubai.hourlyResultsArray);
+console.log('Dubai total', dubai.totalSales);
+
+var paris = {
+  name: 'Paris',
+  minCustomers: 20,
+  maxCustomers: 38,
+  averageCookieCustomer: 2.3,
+  hourlyResultsArray: [],
+  totalSales: 0,
+  generateHourlySales: function () {
+    randomCustomer(this);
+  },
+};
+paris.generateHourlySales();
+console.log('output', paris.hourlyResultsArray);
+console.log('Paris total', paris.totalSales);
+
+var lima = {
+  name: 'Lima',
+  minCustomers: 2,
+  maxCustomers: 16,
+  averageCookieCustomer: 4.6,
+  hourlyResultsArray: [],
+  totalSales: 0,
+  generateHourlySales: function () {
+    randomCustomer(this);
+  },
+};
+lima.generateHourlySales();
+console.log('output', lima.hourlyResultsArray);
+console.log('Lima total', lima.totalSales);
+
+//DOM Seattle
+var parentElement = document.getElementById('Shops');
 var article = document.createElement('article');
 parentElement.appendChild(article);
 
 var h2 = document.createElement('h2');
-h2.textContent = frankie.name;
+h2.textContent = seattle.name;
 article.appendChild(h2);
-
-var p = document.createElement('p');
-p.textContent = 'Frankie is adorable, and is ' + frankie.age + ' old.';
-article.appendChild(p);
 
 var ul = document.createElement('ul');
 article.appendChild(ul);
 
-for (var i = 0; i < frankie.interests.length; i++) {
+for (var i = 0; i < seattle.hourlyResultsArray.length; i++) {
   var li = document.createElement('li');
-  li.textContent = frankie.interests[i];
+  li.textContent = hours[i] + ': ' + seattle.hourlyResultsArray[i] + ' cookies';
   ul.appendChild(li);
 }
+var totalLi = document.createElement('li');
+totalLi.textContent = `Total: ${seattle.totalSales} cookies`;
+ul.appendChild(totalLi);
 
-var img = document.createElement('img');
-img.setAttribute('src', 'images/' + frankie.name + '.jpeg');
-img.setAttribute('alt', 'cute picture of ' + frankie.name + ', who is an orange and white cat. You should really adopt him.');
-article.appendChild(img);
 
-// attach those elements to the parent in the DOM.
+//DOM Tokyo
 
-// object literals
-// bracket and dot notation
-// math.random
-// add kittens to the page
-// each kitten gets an Article
-// each kitten's name shown as a subhead
-// each pic shown as an image with dynamically-created filename (involves setting attributes)
-// each array of interests shown as a list
-// getElementById
-// createElement
-// createTextNode
-// appendChild
+var parentElement = document.getElementById('Shops');
+var article = document.createElement('article');
+parentElement.appendChild(article);
+
+var h2 = document.createElement('h2');
+h2.textContent = tokyo.name;
+article.appendChild(h2);
+
+var ul = document.createElement('ul');
+article.appendChild(ul);
+
+for (var i = 0; i < tokyo.hourlyResultsArray.length; i++) {
+  var li = document.createElement('li');
+  li.textContent = hours[i] + ': ' + tokyo.hourlyResultsArray[i] + ' cookies';
+  ul.appendChild(li);
+}
+var totalLi = document.createElement('li');
+totalLi.textContent = `Total: ${tokyo.totalSales} cookies`;
+ul.appendChild(totalLi);
+
+// DOM Dubai
+
+var parentElement = document.getElementById('Shops');
+var article = document.createElement('article');
+parentElement.appendChild(article);
+
+var h2 = document.createElement('h2');
+h2.textContent = dubai.name;
+article.appendChild(h2);
+
+var ul = document.createElement('ul');
+article.appendChild(ul);
+
+for (var i = 0; i < dubai.hourlyResultsArray.length; i++) {
+  var li = document.createElement('li');
+  li.textContent = hours[i] + ': ' + dubai.hourlyResultsArray[i] + ' cookies';
+  ul.appendChild(li);
+}
+var totalLi = document.createElement('li');
+totalLi.textContent = `Total: ${dubai.totalSales} cookies`;
+ul.appendChild(totalLi);
+
+//DOM Paris
+
+var parentElement = document.getElementById('Shops');
+var article = document.createElement('article');
+parentElement.appendChild(article);
+
+var h2 = document.createElement('h2');
+h2.textContent = paris.name;
+article.appendChild(h2);
+
+var ul = document.createElement('ul');
+article.appendChild(ul);
+
+for (var i = 0; i < paris.hourlyResultsArray.length; i++) {
+  var li = document.createElement('li');
+  li.textContent = hours[i] + ': ' + paris.hourlyResultsArray[i] + ' cookies';
+  ul.appendChild(li);
+}
+var totalLi = document.createElement('li');
+totalLi.textContent = `Total: ${paris.totalSales} cookies`;
+ul.appendChild(totalLi);
+
+//DOM Lima
+
+var parentElement = document.getElementById('Shops');
+var article = document.createElement('article');
+parentElement.appendChild(article);
+
+var h2 = document.createElement('h2');
+h2.textContent = lima.name;
+article.appendChild(h2);
+
+var ul = document.createElement('ul');
+article.appendChild(ul);
+
+for (var i = 0; i < lima.hourlyResultsArray.length; i++) {
+  var li = document.createElement('li');
+  li.textContent = hours[i] + ': ' + lima.hourlyResultsArray[i] + ' cookies';
+  ul.appendChild(li);
+}
+var totalLi = document.createElement('li');
+totalLi.textContent = `Total: ${lima.totalSales} cookies`;
+ul.appendChild(totalLi);
