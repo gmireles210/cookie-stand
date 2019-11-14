@@ -133,7 +133,7 @@ var hourTotals = function(){
   }
 
   var footerTotals = document.createElement('td');
-  footerTotals.textContent = grandTotal + ' Grand Total';
+  footerTotals.textContent = grandTotal + ' Final Totals';
   footerTr.appendChild(footerTotals);
   tableElement.appendChild(footerTr);
 }
