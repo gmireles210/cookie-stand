@@ -112,7 +112,7 @@ var hourTotals = function(){
   var footerTr = document.createElement('tr');
   var totalName = document.createElement('th');
 
-  totalName.textContent = 'Hourly Totals';
+  totalName.textContent = 'Total Hourly Sales';
   footerTr.appendChild(totalName);
 
   // The hourly total of all sales //
