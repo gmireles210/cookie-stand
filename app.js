@@ -117,12 +117,12 @@ var hourTotals = function(){
 
   // The hourly total of all sales //
   for(var i = 0; i < hours.length; i++){
-    var hourlyTotal = 0;
+    var hourTotals = 0;
     for(var j = 0; j < store.length; j++){
-      hourlyTotal += store[j].hourlyCookies[i];
+      hourTotals += store[j].hourlyCookies[i];
     }
     var footerTd = document.createElement('td');
-    footerTd.textContent = hourlyTotal;
+    footerTd.textContent = hourTotals;
     footerTr.appendChild(footerTd);
   }
 
