@@ -21,11 +21,11 @@ var Stores = function(location, minCustomer, maxCustomer, avgCookies){
 }
 
 // Counting the total cookies sold for open hours for each store //
-Stores.prototype.totCookies = function(){
-  var totCookiesSold = function(total, num){
+Stores.prototype.totalCookies = function(){
+  var totalCookiesSold = function(total, num){
     return total + num;
   }
-  this.totalSales = this.hourlyCookies.reduce(totCookiesSold);
+  this.totalSales = this.hourlyCookies.reduce(totalCookiesSold);
 }
 
 // counting the total hourly customers //
@@ -45,7 +45,7 @@ Stores.prototype.arrayObject = function(){
 
 // Data for the store rows //
 Stores.prototype.dataRow = function(){
-  this.totCookies();
+  this.totalCookies();
   var trElement = document.createElement('tr');
   var thElement = document.createElement('th');
   thElement.textContent = this.location;
@@ -127,17 +127,16 @@ var hourTotals = function(){
   }
 
   // The final total of cookies sold each hour, for each store //
-  var grandTotal = 0;
+  var finalTotal = 0;
   for(var k = 0; k < store.length; k++){
-    grandTotal += store[k].totalSales;
+    finalTotal += store[k].totalSales;
   }
 
   var footerTotals = document.createElement('td');
-  footerTotals.textContent = grandTotal + ' Final Totals';
+  footerTotals.textContent = finalTotal + ' Final Totals';
   footerTr.appendChild(footerTotals);
   tableElement.appendChild(footerTr);
 }
-
 
 var renderCookieTable = function(){
   for(var i = 0; i < store.length; i++){
@@ -148,3 +147,28 @@ var renderCookieTable = function(){
   hourTotals();
 }
 renderCookieTable();
+
+///////////////////-----Form to add new stores to table-----////////////////////////////////
+
+var salmonForm = document.getElementById('salmonForm');
+salmonForm.addEventListener('submit', newSalmonStore);
+
+function newSalmonStore(event){
+
+  event.preventDefault(); //preventDefault as learned in class
+  console.log('button clicked');
+
+  //Specifiy inputs into newly created form
+  var storeName = event.target.newSalmonStore.value;
+  var minCustomer = parseInt(event.target.minCustomer.value); 
+  var maxCustomer = parseInt(event.target.maxCustomer.value);
+  var avgCookies = parseFloat(event.target.avgCookies.value);
+
+  // Variable for new Salmon Cookie location
+  var newSalmonCity = new Stores(storeName, minCustomer, maxCustomer, avgCookies);
+  event.target.reset();
+  newSalmonCity.dataRow();
+  store.push(newSalmonCity);
+  hourlyTotals();
+}
+
