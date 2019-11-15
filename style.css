@@ -61,13 +61,24 @@ li:last-child {
   border-right: 1px solid rgb(165, 157, 157);
 }
 
+fieldset {
+  display: inline-block;
+  margin-left: 4px;
+  margin-right: 4px;
+  padding-top: 0.50em;
+  padding-bottom: 0.50em;
+  padding-left: 0.90em;
+  padding-right: 0.90em;
+  border: 2px groove (internal value);
+}
+
 .imgResize {
   width: 200px;
   border: gray 1px;
 }
 
 #table,td, th {
-    font-family: arial, sans-serif;
+    font-family: Lobster, sans-serif;
     border-collapse: collapse;
     width: 100%;
     border: .5px solid #dddddd;
@@ -82,3 +93,15 @@ li:last-child {
     background-color: hsl(347, 88%, 62%);
   
   }
+
+  form {
+  font-size: 0.9em;
+  font-family: 'Lobster', sans-serif;
+  letter-spacing: 0.2em;
+}
+
+
+
+
+
+
