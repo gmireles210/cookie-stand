@@ -169,6 +169,6 @@ function newSalmonStore(event){
   event.target.reset();
   newSalmonCity.dataRow();
   store.push(newSalmonCity);
-  hourlyTotals();
+  hourTotals();
 }
 
