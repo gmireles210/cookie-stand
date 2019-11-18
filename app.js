@@ -160,7 +160,7 @@ function newSalmonStore(event){
 
   //Specifiy inputs into newly created form
   var storeName = event.target.newSalmonStore.value;
-  var minCustomer = parseInt(event.target.minCustomer.value); 
+  var minCustomer = parseInt(event.target.minCustomer.value);
   var maxCustomer = parseInt(event.target.maxCustomer.value);
   var avgCookies = parseFloat(event.target.avgCookies.value);
 
