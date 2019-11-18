@@ -17,7 +17,7 @@ h1 {
   font-family: 'Lobster', cursive;
   text-align: center;
   font-size: 3em;
-  color: rgb(255, 255, 255);
+  color: #edf8b1;
   margin-top: 15px;
   margin-bottom: 45px;
 }
@@ -85,7 +85,7 @@ li {
 
 li a {
   display: block;
-  color: white;
+  color: #edf8b1;
   padding: 10px 40px 10px 40px;
   border-left: 1px solid rgb(165, 157, 157);
 }
