@@ -60,7 +60,7 @@ nav>ul {
   padding: 20px;
   margin: 30px;
   overflow: hidden;
-  border: 1px solid #e7e7e7;
+  border: 1px solid #edf8b1;
   background-color: #7fcdbb;
 }
 
@@ -74,8 +74,33 @@ ul {
   padding: 20px;
   margin: 10px;
   overflow: hidden;
-  border: 1px solid #e7e7e7;
+  border: 2px solid #edf8b1;
   background-color: #7fcdbb;
+}
+
+#apparel {
+  font-family: 'Lobster', cursive;
+  text-align: center;
+  list-style-type: none;
+  float: right;
+  margin-right: 15px;
+  border-width: 10px;
+  border-style: solid;
+  border-radius: 20px;
+  padding: 20px;
+  margin: 10px;
+  overflow: hidden;
+  border: 2px solid #edf8b1;
+  background-color: #7fcdbb;
+  width: 400px;
+  height: 1250px;
+  color: #2c7fb8;  
+}
+
+#apparel>p{
+  font-family: 'Lobster', cursive;
+  text-align: center;
+  color: #2c7fb8;
 }
 
 
@@ -111,7 +136,6 @@ fieldset {
 }
 
 .imgResize {
-  
   width: 200px;
   border: gray 1px;
 }
