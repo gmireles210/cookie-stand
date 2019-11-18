@@ -4,6 +4,7 @@ body {
   color: #2c7fb8;
   background-color: #fa9fb5;
   font-size: 16px;
+  margin: 20px;
 }
 
 header>img.center {
@@ -93,7 +94,7 @@ ul {
   border: 2px solid #edf8b1;
   background-color: #7fcdbb;
   width: 400px;
-  height: 1250px;
+  height: 1100px;
   color: #2c7fb8;  
 }
 
