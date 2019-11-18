@@ -6,6 +6,13 @@ body {
   font-size: 16px;
 }
 
+header>img.center {
+  float: none;
+  display: block;
+  margin: 0 auto;
+
+}
+
 h1 {
   font-family: 'Lobster', cursive;
   text-align: center;
@@ -17,30 +24,60 @@ h1 {
 
 h2 {
   font-family: 'Lobster', cursive;
-  margin-left: 30px;
+  margin-left: 5px;
   margin-top: 10px;
   margin-bottom: 25px;
   font-size: 2em;
-  color: rgb(255, 255, 255)  
+  color: #2c7fb8  
 }
 
 h3 {
   font-family: 'Lobster', cursive;
-  margin-left: 30px;
+  margin-left: 1px;
   margin-top: 10px;
-  margin-bottom: 5px;
+  margin-bottom: 15px;
   font-size: 1.5em;
   color: rgb(255, 255, 255)
 }
 
-ul {
+p {
+  margin-right: 15px;
+  text-align: left;
+}
+
+nav {
+  display: block;
+  
+}
+
+nav>ul {
   list-style-type: none;
-  margin: 0;
-  padding: 0;
+  float: top;
+  margin-right: 15px;
+  border-width: 10px;
+  border-style: solid;
+  border-radius: 20px;
+  padding: 20px;
+  margin: 30px;
   overflow: hidden;
   border: 1px solid #e7e7e7;
   background-color: #7fcdbb;
 }
+
+ul {
+  list-style-type: none;
+  float: bottom;
+  margin-right: 15px;
+  border-width: 10px;
+  border-style: solid;
+  border-radius: 20px;
+  padding: 20px;
+  margin: 10px;
+  overflow: hidden;
+  border: 1px solid #e7e7e7;
+  background-color: #7fcdbb;
+}
+
 
 li {
   float: left;
@@ -61,6 +98,7 @@ li:last-child {
   border-right: 1px solid rgb(165, 157, 157);
 }
 
+
 fieldset {
   display: inline-block;
   margin-left: 4px;
@@ -73,6 +111,7 @@ fieldset {
 }
 
 .imgResize {
+  
   width: 200px;
   border: gray 1px;
 }
