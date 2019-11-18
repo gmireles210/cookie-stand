@@ -91,7 +91,7 @@ function headerRow(){
   tableElement.appendChild(trElement);
 
   thElement = document.createElement('th');
-  thElement.textContent = 'Total';
+  thElement.textContent = 'Final Totals';
   trElement.appendChild(thElement);
   tableElement.appendChild(trElement);
 }
@@ -133,7 +133,7 @@ var hourTotals = function(){
   }
 
   var footerTotals = document.createElement('td');
-  footerTotals.textContent = finalTotal + ' Final Totals';
+  footerTotals.textContent = finalTotal;
   footerTr.appendChild(footerTotals);
   tableElement.appendChild(footerTr);
 }
@@ -156,7 +156,7 @@ salmonForm.addEventListener('submit', newSalmonStore);
 function newSalmonStore(event){
 
   event.preventDefault(); //preventDefault as learned in class
-  console.log('button clicked');
+  console.log('submit successful');
 
   //Specifiy inputs into newly created form
   var storeName = event.target.newSalmonStore.value;
